@@ -1,0 +1,184 @@
+:root {
+  --latar: #d9e2e4;
+  --badan: #263238;
+  --layar: #c9d9c3;
+  --teks-layar: #1d2b22;
+  --tombol-angka: #f1f4f3;
+  --tombol-fungsi: #90a4ae;
+  --tombol-operator: #e8772e;
+  --tombol-sama: #2e9c78;
+  --teks-gelap: #1b2327;
+  --teks-terang: #ffffff;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+  flex-wrap: wrap;
+  padding: 24px;
+  background: var(--latar);
+  font-family:
+    "Segoe UI",
+    system-ui,
+    -apple-system,
+    sans-serif;
+}
+
+/* ===== Badan kalkulator ===== */
+.kalkulator {
+  width: 100%;
+  max-width: 340px;
+  padding: 20px;
+  border-radius: 24px;
+  background: var(--badan);
+  box-shadow: 0 18px 40px rgba(38, 50, 56, 0.35);
+}
+
+/* ===== Layar ===== */
+.layar {
+  min-height: 96px;
+  margin-bottom: 18px;
+  padding: 12px 16px;
+  border-radius: 12px;
+  background: var(--layar);
+  color: var(--teks-layar);
+  text-align: right;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: inset 0 3px 8px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+}
+
+.layar .riwayat {
+  min-height: 20px;
+  font-size: 0.95rem;
+  opacity: 0.65;
+  font-family: ui-monospace, Consolas, monospace;
+  word-break: break-all;
+}
+
+.layar .hasil {
+  font-size: 2.4rem;
+  font-weight: 600;
+  font-family: ui-monospace, Consolas, monospace;
+  line-height: 1.2;
+  word-break: break-all;
+}
+
+/* ===== Tombol ===== */
+.tombol-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+
+button {
+  height: 62px;
+  border: none;
+  border-radius: 14px;
+  font-size: 1.3rem;
+  font-weight: 600;
+  cursor: pointer;
+  color: var(--teks-gelap);
+  background: var(--tombol-angka);
+  box-shadow: 0 3px 0 rgba(0, 0, 0, 0.3);
+  transition:
+    transform 0.08s,
+    box-shadow 0.08s,
+    filter 0.15s;
+}
+
+button:hover {
+  filter: brightness(1.06);
+}
+
+button:active {
+  transform: translateY(3px);
+  box-shadow: 0 0 0 rgba(0, 0, 0, 0.3);
+}
+
+button:focus-visible {
+  outline: 3px solid #ffd54f;
+  outline-offset: 2px;
+}
+
+button.fungsi {
+  background: var(--tombol-fungsi);
+}
+
+button.operator {
+  background: var(--tombol-operator);
+  color: var(--teks-terang);
+}
+
+button.sama {
+  background: var(--tombol-sama);
+  color: var(--teks-terang);
+}
+
+button.lebar {
+  grid-column: span 2;
+}
+
+/* ===== Panel riwayat perhitungan ===== */
+.panel-riwayat {
+  width: 100%;
+  max-width: 260px;
+  padding: 18px;
+  border-radius: 18px;
+  background: #ffffff;
+  box-shadow: 0 8px 24px rgba(38, 50, 56, 0.15);
+  align-self: stretch;
+  max-height: 520px;
+  overflow-y: auto;
+}
+
+.panel-riwayat h2 {
+  margin: 0 0 10px;
+  font-size: 1.05rem;
+  color: var(--badan);
+}
+
+.panel-riwayat ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-family: ui-monospace, Consolas, monospace;
+  font-size: 0.9rem;
+}
+
+.panel-riwayat li {
+  padding: 8px 0;
+  border-bottom: 1px solid #e3e8ea;
+  color: var(--badan);
+  word-break: break-all;
+}
+
+.panel-riwayat .kosong {
+  color: #78909c;
+  font-family: "Segoe UI", system-ui, sans-serif;
+}
+
+.panel-riwayat .hapus-riwayat {
+  width: 100%;
+  height: 38px;
+  margin-top: 12px;
+  font-size: 0.9rem;
+  background: #eceff1;
+  box-shadow: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  button {
+    transition: none;
+  }
+}

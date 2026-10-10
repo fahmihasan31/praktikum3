@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Kalkulator Sederhana</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <main class="kalkulator" aria-label="Kalkulator">
+    <div class="layar" aria-live="polite">
+      <div class="riwayat" id="riwayat"></div>
+      <div class="hasil" id="hasil">0</div>
+    </div>
+
+    <div class="tombol-grid" id="tombolGrid">
+      <button class="fungsi" data-aksi="clear">C</button>
+      <button class="fungsi" data-aksi="hapus" aria-label="Hapus satu angka">⌫</button>
+      <button class="fungsi" data-aksi="persen">%</button>
+      <button class="operator" data-operator="/" aria-label="Bagi">÷</button>
+
+      <button data-angka="7">7</button>
+      <button data-angka="8">8</button>
+      <button data-angka="9">9</button>
+      <button class="operator" data-operator="*" aria-label="Kali">×</button>
+
+      <button data-angka="4">4</button>
+      <button data-angka="5">5</button>
+      <button data-angka="6">6</button>
+      <button class="operator" data-operator="-" aria-label="Kurang">−</button>
+
+      <button data-angka="1">1</button>
+      <button data-angka="2">2</button>
+      <button data-angka="3">3</button>
+      <button class="operator" data-operator="+" aria-label="Tambah">+</button>
+
+      <button class="lebar" data-angka="0">0</button>
+      <button data-aksi="desimal">,</button>
+      <button class="sama" data-aksi="sama">=</button>
+    </div>
+  </main>
+
+  <aside class="panel-riwayat" aria-label="Riwayat perhitungan">
+    <h2>Riwayat perhitungan</h2>
+    <ul id="daftarRiwayat">
+      <li class="kosong">Belum ada perhitungan.</li>
+    </ul>
+    <button class="hapus-riwayat" id="hapusRiwayat">Hapus riwayat</button>
+  </aside>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
